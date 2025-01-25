@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class NewBehaviourScript : MonoBehaviour
 {
+    public void CargarMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
     public void JugarNivel1()
     {
         SceneManager.LoadScene(1);
