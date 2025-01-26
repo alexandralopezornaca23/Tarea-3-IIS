@@ -43,6 +43,8 @@ public class FruitCollected : MonoBehaviour
             //    Debug.LogError("No hay hijos en el objeto fruta");
             //}
 
+            FindObjectOfType<FruitManager>().AllFruitsCollected();
+
             Destroy(gameObject, 0.5f);
             //Debug.Log("Fruta destruida después de 0.5 segundos");
         }

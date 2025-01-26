@@ -16,6 +16,9 @@ EditorBuildSettings:
     guid: e902ab0b9b4351545b50dab220cad331
   - enabled: 1
     path: Assets/Scenes/Nivel-2.unity
+    guid: 082f18892b5ec5043848f73b3c4081f8
+  - enabled: 1
+    path: Assets/Scenes/Nivel-Pruebas.unity
     guid: 5255bd0689ccb3946b30157ffec7b7c9
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
