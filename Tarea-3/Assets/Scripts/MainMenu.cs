@@ -7,16 +7,16 @@ public class NewBehaviourScript : MonoBehaviour
 {
     public void CargarMainMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
     public void JugarNivel1()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
     public void JugarNivel2()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
 
     public void Salir()
