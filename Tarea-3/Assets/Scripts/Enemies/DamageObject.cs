@@ -9,7 +9,9 @@ public class DamageObject : MonoBehaviour
         if (collision.transform.CompareTag("Player"))
         {
             //Debug.Log("El player a sido matado");
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
+
+            collision.transform.GetComponent<PlayerRespawn>().PlayerDamage();
         }
     }
 }

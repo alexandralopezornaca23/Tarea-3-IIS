@@ -6,19 +6,28 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Nivel-Pruebas.unity
-    guid: 5255bd0689ccb3946b30157ffec7b7c9
-  - enabled: 1
-    path: Assets/Scenes/InitialScreen.unity
+    path: Assets/Scenes/Initial-Screen.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Main-Menu.unity
     guid: 386eeba0d0e13cc4195f0400e966edf0
+  - enabled: 0
+    path: Assets/Scenes/Skins-Select.unity
+    guid: c221be08a38a35a4aba2c607dcf77144
+  - enabled: 1
+    path: Assets/Scenes/Select-Level.unity
+    guid: b78417c5808ee09468db7f04b8f60456
+  - enabled: 1
+    path: Assets/Scenes/Nivel-Pruebas.unity
+    guid: 5255bd0689ccb3946b30157ffec7b7c9
   - enabled: 1
     path: Assets/Scenes/Nivel-1.unity
     guid: e902ab0b9b4351545b50dab220cad331
   - enabled: 1
     path: Assets/Scenes/Nivel-2.unity
     guid: 082f18892b5ec5043848f73b3c4081f8
+  - enabled: 1
+    path: Assets/Scenes/FinalScene-Credits.unity
+    guid: 36d0155a4d6f443449d66659a0f68dfc
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

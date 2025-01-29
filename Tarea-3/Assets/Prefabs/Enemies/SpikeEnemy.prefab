@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 609865803232145013}
   - component: {fileID: 678973804391075587}
   - component: {fileID: 6566421368095992998}
-  - component: {fileID: 5402392394993059721}
   - component: {fileID: 5134537844953992933}
+  - component: {fileID: 5402392394993059721}
   m_Layer: 0
   m_Name: SpikeEnemy
   m_TagString: Untagged
@@ -135,18 +135,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.38791585, y: 0.39011297}
   m_EdgeRadius: 0
---- !u!114 &5402392394993059721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1910147785035186197}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed15f426906266b43811d0f2cadd4066, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &5134537844953992933
 Animator:
   serializedVersion: 7
@@ -169,3 +157,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5402392394993059721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910147785035186197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed15f426906266b43811d0f2cadd4066, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

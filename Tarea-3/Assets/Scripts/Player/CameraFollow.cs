@@ -27,7 +27,7 @@ public class CameraFollow : MonoBehaviour
         camHalfWidth = camHalfHeight * cam.aspect;
     }
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
         if (target == null)
         {
@@ -36,7 +36,7 @@ public class CameraFollow : MonoBehaviour
         }
 
         // Desired camera position with fixed horizontal offset and no vertical movement.
-        Vector3 desiredPosition = new Vector3(target.position.x + xOffset, transform.position.y, transform.position.z);
+        Vector3 desiredPosition = new Vector3(target.position.x + xOffset, target.position.y, transform.position.z);
 
         // Smooth camera transition.
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
@@ -45,12 +45,38 @@ public class CameraFollow : MonoBehaviour
         if (useBounds)
         {
             float clampedX = Mathf.Clamp(smoothedPosition.x, minBounds.x + camHalfWidth, maxBounds.x - camHalfWidth);
-            smoothedPosition.x = clampedX;
+            float clampedY = Mathf.Clamp(smoothedPosition.y, minBounds.y + camHalfHeight, maxBounds.y - camHalfHeight);
+            smoothedPosition = new Vector3(clampedX, clampedY, smoothedPosition.z);
         }
 
         // Update camera position.
-        transform.position = new Vector3(smoothedPosition.x, transform.position.y, transform.position.z);
+        transform.position = smoothedPosition;
     }
+
+    //private void LateUpdate()
+    //{
+    //    if (target == null)
+    //    {
+    //        Debug.LogWarning("Target not assigned to CameraFollow script.");
+    //        return;
+    //    }
+
+    //    // Desired camera position with fixed horizontal offset and no vertical movement.
+    //    Vector3 desiredPosition = new Vector3(target.position.x + xOffset, transform.position.y, transform.position.z);
+
+    //    // Smooth camera transition.
+    //    Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+
+    //    // Apply bounds if enabled.
+    //    if (useBounds)
+    //    {
+    //        float clampedX = Mathf.Clamp(smoothedPosition.x, minBounds.x + camHalfWidth, maxBounds.x - camHalfWidth);
+    //        smoothedPosition.x = clampedX;
+    //    }
+
+    //    // Update camera position.
+    //    transform.position = new Vector3(smoothedPosition.x, transform.position.y, transform.position.z);
+    //}
 
     private void OnDrawGizmosSelected()
     {

@@ -1,3 +1,4 @@
+using NUnit.Framework.Interfaces;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,9 @@ public class PlayerMove : MonoBehaviour
 {
     public float runSpeed = 2f;
     public float jumpSpeed = 3f;
+
+    public float doubleJumpSpeed = 2.5f;
+    private bool canDubleJump;
 
     Rigidbody2D rb2D;
 
@@ -20,6 +24,51 @@ public class PlayerMove : MonoBehaviour
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKey("space"))
+        {
+            if (Checkground.isGrounded)
+            {
+                canDubleJump = true;
+                rb2D.velocity = new Vector2(rb2D.velocity.x, jumpSpeed);
+            }
+            else
+            {
+                if (Input.GetKeyDown("space"))
+                {
+                    if (canDubleJump)
+                    {
+                        animator.SetBool("DoubleJump", true);
+                        rb2D.velocity = new Vector2(rb2D.velocity.x, doubleJumpSpeed);
+                        canDubleJump = false;
+                    }
+                }
+            }
+        }
+
+        if (Checkground.isGrounded == false)
+        {
+            animator.SetBool("IsJump", true);
+            animator.SetBool("IsRun", false);
+        }
+        else
+        {
+            animator.SetBool("IsJump", false); 
+            animator.SetBool("DoubleJump", false);
+            animator.SetBool("Falling", false);
+        }
+
+        if (rb2D.velocity.y < 0)
+        {
+            animator.SetBool("Falling", true);
+        }
+        else if (rb2D.velocity.y > 0)
+        {
+            animator.SetBool("Falling", false);
+        }
     }
 
     // Update is called once per frame
@@ -41,22 +90,7 @@ public class PlayerMove : MonoBehaviour
         {
             rb2D.velocity = new Vector2(0, rb2D.velocity.y);
             animator.SetBool("IsRun", false);
-        }
-
-        if (Input.GetKey("space") && Checkground.isGrounded)
-        {
-            rb2D.velocity = new Vector2(rb2D.velocity.x, jumpSpeed);
-        }
-
-        if (Checkground.isGrounded == false)
-        {
-            animator.SetBool("IsJump", true);
-            animator.SetBool("IsRun", false);
-        }
-        else
-        {
-            animator.SetBool("IsJump", false);
-        }
+        }        
 
         if (betterJump)
         {
