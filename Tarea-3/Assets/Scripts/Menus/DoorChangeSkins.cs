@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class DoorChangeSkins : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class DoorChangeSkins : MonoBehaviour
     private bool inDoor = false;
     public GameObject player;
     private bool isPaused = false;
+
+    public AudioSource clip;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -100,5 +103,10 @@ public class DoorChangeSkins : MonoBehaviour
         panelPulsaE.gameObject.SetActive(true);
         player.GetComponent<PlayerSelect>().ChangePlayerInMenu(); 
         Time.timeScale = 1f; // Reanudar el tiempo
+    }
+
+    public void PlayButtonSound()
+    {
+        clip.Play();
     }
 }

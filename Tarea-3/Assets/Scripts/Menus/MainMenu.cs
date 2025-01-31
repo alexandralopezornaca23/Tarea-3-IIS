@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class MainMenu : MonoBehaviour
 {
+    public AudioSource clip;
+
     public void CargarMainMenu()
     {
         SceneManager.LoadScene(1);
@@ -22,5 +25,10 @@ public class MainMenu : MonoBehaviour
     public void Salir()
     {
         Application.Quit();
+    }
+
+    public void PlayButtonSound()
+    {
+        clip.Play();
     }
 }

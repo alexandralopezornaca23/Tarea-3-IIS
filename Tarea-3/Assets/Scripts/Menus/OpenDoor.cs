@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 using TMPro;
 
 public class OpenDoor : MonoBehaviour
@@ -11,6 +12,8 @@ public class OpenDoor : MonoBehaviour
     //public TextMeshProUGUI textPulsaE;
     public string levelName;
     private bool inDoor = false;
+
+    public AudioSource clip;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -55,12 +58,16 @@ public class OpenDoor : MonoBehaviour
 
         if (inDoor && Input.GetKeyDown(KeyCode.E)) // Usa GetKeyDown en lugar de GetKey
         {
-            ChangeScene();
+            StartCoroutine(ChangeScene());
         }
     }
 
-    private void ChangeScene()
+    private IEnumerator ChangeScene()
     {
+        clip.Play();
+
+        yield return new WaitForSeconds(0.25f);
+
         if (!string.IsNullOrEmpty(levelName))
         {
             SceneManager.LoadScene(levelName);
@@ -69,5 +76,7 @@ public class OpenDoor : MonoBehaviour
         {
             Debug.LogError("El nombre de la escena no está configurado en OpenDoor.");
         }
+
+        yield return null;
     }
 }

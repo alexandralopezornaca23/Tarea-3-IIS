@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class FruitCollected : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class FruitCollected : MonoBehaviour
     //        Destroy(gameObject);
     //    }
     //}
+
+    public AudioSource clip;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -45,6 +48,8 @@ public class FruitCollected : MonoBehaviour
             
             Destroy(gameObject, 0.5f);
             //Debug.Log("Fruta destruida después de 0.5 segundos");
+
+            clip.Play();
         }
     }
 }

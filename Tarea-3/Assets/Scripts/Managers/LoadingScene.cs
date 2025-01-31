@@ -50,7 +50,7 @@ public class LoadingScene : MonoBehaviour
             if (operation.progress >= 0.9f)
             {
                 // Esperar un poco más para permitir que se vea la transición
-                yield return new WaitForSeconds(5f); // Espera de 1 segundo para ver la transición
+                yield return new WaitForSeconds(2.5f); // Espera de 1 segundo para ver la transición
 
                 // Finalmente, activamos la escena
                 operation.allowSceneActivation = true;

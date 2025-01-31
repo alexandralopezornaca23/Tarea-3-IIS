@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class UIManager : MonoBehaviour
 {
     public GameObject pausePanel;
     private bool isPaused = false;
+
+    public AudioSource clip;
 
     private void Update()
     {
@@ -40,7 +43,9 @@ public class UIManager : MonoBehaviour
     public void GoInitialScreen()
     {
         //para ir al Main Menu más organizado.
-        SceneManager.LoadScene("Initial-Screen");
+        Time.timeScale = 1f;
+        isPaused = false;
+        pausePanel.SetActive(false);
     }
 
     public void GoLevelSelect()
@@ -54,21 +59,35 @@ public class UIManager : MonoBehaviour
 
     public void GoOptionsMenu()
     {
-        
+
     }
 
     public void ResetLevel()
     {
-        //Time.timeScale = 1f; // Asegurarse de que el tiempo se reanude
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Reiniciar la escena actual
-
-        Time.timeScale = 1f;
-        isPaused = false;
-        pausePanel.SetActive(false);
+        
+        StartCoroutine(ResetLevelEnum());
+        
     }
 
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void PlayButtonSound()
+    {
+        clip.Play();
+    }
+
+    private IEnumerator ResetLevelEnum()
+    {
+        Time.timeScale = 1f; // Asegurarse de que el tiempo se reanude
+        clip.Play();
+
+        yield return new WaitForSeconds(0.25f);
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Reiniciar la escena actual
+
+        yield return null;
     }
 }
