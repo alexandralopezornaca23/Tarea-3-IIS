@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 55
+  controlID: 104
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -832,9 +832,9 @@ MonoBehaviour:
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1253
+    x: 1345
     y: 73
-    width: 666
+    width: 574
     height: 918
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -1607,7 +1607,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 7c55ffffce56ffff
+      m_ExpandedIDs: f805ffff4606ffff1a08ffff240cffff4a0cffff3a0dffffa60dffffc80dffffdc0dffff824cffffd04cffffd44effffe652ffff1453ffff0c54ffff8054ffffaa54ffffc654ffff6455ffffb656ffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1851,7 +1851,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Prefabs/PlayerPrefab/Ninja Frog/Sprites
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1861,16 +1861,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Prefabs/PlayerPrefab/Ninja Frog/Sprites
   m_LastFoldersGridSize: 96
   m_LastProjectPath: D:\Proyectos Unity\Tarea 3 IIS\Tarea-3-IIS\Tarea-3
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 73}
-    m_SelectedIDs: fabc0000
-    m_LastClickedID: 48378
-    m_ExpandedIDs: 00000000e6b40000
+    scrollPos: {x: 0, y: 85}
+    m_SelectedIDs: 40c60000
+    m_LastClickedID: 50752
+    m_ExpandedIDs: 00000000f2b400000ab80000a6bc00009cce0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2062,9 +2062,9 @@ MonoBehaviour:
     m_TextWithWhitespace: "Project Settings\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1253
+    x: 1345
     y: 73
-    width: 666
+    width: 574
     height: 918
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -2084,8 +2084,8 @@ MonoBehaviour:
   m_SearchText: 
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: a6db0401
-    m_LastClickedID: 17095590
+    m_SelectedIDs: af40b7a9
+    m_LastClickedID: -1447608145
     m_ExpandedIDs: 53336be200000000c53aba5a
     m_RenameOverlay:
       m_UserAcceptedRename: 0
